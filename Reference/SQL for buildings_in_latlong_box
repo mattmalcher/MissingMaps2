@@ -1,0 +1,19 @@
+  -- Taken From: https://gis.stackexchange.com/questions/223828/select-all-points-within-a-bounding-box
+
+SELECT count(osm_id)        -- returns just the count of the number of polygons
+FROM planet_osm_polygon
+WHERE ST_Contains(          -- http://www.postgis.net/docs/ST_Contains.html
+    ST_Transform(           -- http://www.postgis.net/docs/ST_Transform.html
+        ST_MakeEnvelope(    -- http://www.postgis.net/docs/ST_MakeEnvelope.html
+            86.8778,26.5488,86.8813,26.5509, -- xmin, ymin, xmax, ymax, srid
+        4326) -- 4326 is the reference coordinate system
+        ,3857)
+﻿    ,planet_osm_polygon.way) and planet_osm_polygon.building is not null ;
+
+--
+--potential issue for this approach is how long it might take - 1 query takes order 200ms rasters are order 50Mp
+--
+--therefore 50e6*200e-3/3600 = 2777 hours...
+--
+--the alternative approach is build up the raster by iterating over all the buildings, finding their coordinates
+--and incrementing the appropriate square in the raster.
