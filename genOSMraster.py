@@ -1,4 +1,7 @@
-from Functions import *
+# Script using Functions.py to connect to the PostGIS database created using osm2pgsql and create a raster of
+# OSM building density
+
+from Functions import *   #imports all the functions in Functions.py
 
 # Set up the connection to the database which contains the OSM data for our region of interest
 [cur, conn] = init_db()
@@ -10,11 +13,13 @@ pop_tiff_name = 'Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif'
 print('WorldPop Array Max: ', wp_array.max(), ' Min: ', wp_array.min())
 
 # Create a blank array to contain osm building count
-# blank_array = [[0 for i in range(col)] for j in range(row)]
 blank_array = np.zeros((row, col))
 
+# use the osm_db_count function from Functions.py to iterate over the items in the
+# postGIS database and build up a raster
 osm_array = osm_db_count(cur, conn, blank_array, tfm)
 
+# print out basic stats about the OSM array for sanity checking and setting scales in QGIS
 print('OSM Array Max: ', osm_array.max(), ' Min: ', osm_array.min())
 
 # Write out OSM array to a new geotiff matching the spec of the worldpop tiff

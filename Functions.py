@@ -1,17 +1,20 @@
-from __future__ import division # use python3 division behaviour when running on python 2.x
+from __future__ import division  # use python3 division behaviour when running on python 2.x
 from osgeo import gdal
 import math
 import numpy as np
 import psycopg2
 import psycopg2.extras
-import re # for parsing the polygon strings handed back from the db
+import re  # for parsing the polygon strings handed back from the db
+
 
 def init_db():
+    # Initiates connection to PostGIS database and passes the connection and cursor objects back. Note that conn_string
+    # will vary depending on how you have set up Postgress.
 
     conn_string = "host='localhost' dbname='osm' user='mpm2017' password=''"
 
     # print the connection string we will use to connect
-    print("Connecting to database\n	->%s" % (conn_string))
+    print("Connecting to database\n	->%s" % conn_string)
 
     # create database connection & cursor
     conn = psycopg2.connect(conn_string)
@@ -21,7 +24,8 @@ def init_db():
 
 
 def array_to_gt(array,filename,transform,projection):
-    # take array and save it as a geotiff with the appropriate transform
+    # take array and save it as a geotiff with a defined transform and projection
+    # for more details see GDAL documentation
 
     driver = gdal.GetDriverByName('GTiff')
 
@@ -39,21 +43,25 @@ def array_to_gt(array,filename,transform,projection):
 
 
 def add_raster_col(cursor,conn):
+    # Function to add a column to the postgis database with the OSM data - intent was to use this to keep a log of which
+    # buildings had been added to the OSM raster, but the process completed sufficiently quickly that it was simpler to
+    # just do it in one go. Not used at present.
 
-    print('Creating Ratster Column in planet_osm_polygon. This may take some time...')
+    print('Creating Raster Column in planet_osm_polygon. This may take some time...')
     cursor.execute('ALTER TABLE planet_osm_polygon ADD COLUMN "raster" boolean DEFAULT false')
 
     conn.commit()  # commit changes to db
 
 
 def gt_to_array(filename):
-    # Read in geotiff and its properties
+    # Read in geotiff and its properties, returning a numpy array as well as the spec of the transform of the data and
+    # the number of rows and columns.
 
     # Set GeoTiff driver
     driver = gdal.GetDriverByName("GTiff")
     driver.Register()
 
-    #Open raster and read number of rows, columns, bands
+    # Open raster and read number of rows, columns, bands
     dataset = gdal.Open(filename)
     cols = dataset.RasterXSize
     rows = dataset.RasterYSize
@@ -82,13 +90,14 @@ def gt_to_array(filename):
 
 
 def osm_db_count(cursor, conn, raster, transform):
-
+    # function to iterate over the items in the PostGIS database, and for each building add to a count in the pixel in
+    # the appropriate row and column of the OSM raster.
 
     # PostGIS query resulting in iterable object containing data
     cursor.execute('''SELECT osm_id, ST_AsText(ST_Transform(way, 4326))
                             FROM planet_osm_polygon
                             where building is not null and raster is false''')
-                            # limit 100000''')
+    # limit 100000''')   # alternative ending to query - limit not used as process fast enough to do in one go.
 
     # n.b. limit here is set to avoid monolithic sql queries - chunked approach is less resource intensive
 
@@ -99,8 +108,8 @@ def osm_db_count(cursor, conn, raster, transform):
 
     # initialise list of osm_id's - used for updating raster column
     # idlist = []
-    building_count=0
-    building_outside=0
+    building_count = 0
+    building_outside = 0
 
     for row in cursor:
 
@@ -134,7 +143,7 @@ def osm_db_count(cursor, conn, raster, transform):
     print('Buildings Counted: ', building_count)
     print('Buildings Outside Raster Area: ',building_outside)
 
-    # runs and update command setting raser=true for each of the osmid's we have retrieved the coordinates for
+    # runs and update command setting raster=true for each of the osmid's we have retrieved the coordinates for
     # cursor.executemany(''' UPDATE planet_osm_polygon SET raster = TRUE  WHERE osm_id = %s''', idlist)
 
     # write key indicating rasterised to db
