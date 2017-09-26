@@ -5,7 +5,7 @@ The point of this document is to describe what the tools in this repository are,
 why they are built the way they are and how to use them.
 
 ### What are these tools?
-These tools take spatial world population data in raster form from[worldpop](http://www.worldpop.org.uk)and locations of building vector data from[open street map](https://www.openstreetmap.org)and compare the two.
+These tools take spatial world population data in raster form from [worldpop](http://www.worldpop.org.uk) and locations of building vector data from [open street map](https://www.openstreetmap.org) and compare the two.
 The idea is that this provides an indication of where there are people but no maps or 'where the maps are missing'.
 
 The tools in this repository are a development of work done by Simon B. Johnson at the British Red Cross. Please see his 
@@ -14,13 +14,20 @@ and
 [GitHub repository](https://github.com/SimonbJohnson/missingmaps_whatsmissing)
 for context and a nice write-up of the original project.
 
+#### Functional Overview:
 Inputs:
 * Worldpop Data (geotiff raster of population density)
-* .osm file for a region (contains existing map data including building locations.)
+* Open Street Map data for a region (contains existing map data including building locations.)
 
-Output:
+Processing:
+* Store OSM data in PostGIS database
+* Query PostGIS database and count the number of buildings in areas equivalent to pixels in the worldpop raster
+* Compare OSM building count to worldpop people count
+
+Outputs:
+* Raster showing OSM building density
 * Comparison data (geotiff raster) showing discrepancies between number of buildings and popuation density. 
-i.e. an indication of where mapping data is missing.
+*i.e. an indication of where mapping data is missing*
 
 ### Why have they been made?
 
@@ -28,8 +35,8 @@ Many of the places where disasters occur are 'missing' from the map.
 [Missing Maps](http://www.missingmaps.org)is a project to give first responders the information they need to assist 
  people effectively. 
  
-The originator, Simon has many other responsibilities (check out his[blog](https://medium.com/@Simon_B_Johnson)). As such, updating the tools used for the original blog post has 
-fallen somewhere down his list of priorities and into this repository.
+The originator, Simon has many other responsibilities (check out his [blog](https://medium.com/@Simon_B_Johnson) ). As such, updating the tools used for the original blog post has 
+fallen somewhere down his list of priorities, off the bottom, then into this repository.
 
 ### What is Next?
 As per Simon's original post there are several areas for improvement.
@@ -83,7 +90,7 @@ login using pgadmin as:
  `<your username>` @ `127.0.0.1`. 
 
 If you have trouble logging into your database 
-this[stack overflow link](https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist)may be of use.
+this [stack overflow link](https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist)may be of use.
 
 My advice is to use pgAdmin 3 on macOS because it just works. 
 If you use PgAdmin4 and encounter problems, the following may be of interest:
@@ -100,19 +107,19 @@ If you use PgAdmin4 and encounter problems, the following may be of interest:
 The intent of the tools in this repository is to work with relatively large amounts of OSM data. In particular we are 
 interested in buildings and their locations. 
 
-Buildings are stored in OSM as[multipolygons](http://wiki.openstreetmap.org/wiki/Relation:multipolygon). 
+Buildings are stored in OSM as [multipolygons](http://wiki.openstreetmap.org/wiki/Relation:multipolygon). 
 For a country sized area there can be millions of multipolygons. This is why we are using PostGIS as our datastore 
 rather than working with formats such as geojson.
 
 OSM data for countries can be found readily on the internet. (See the 
-OSM[wiki](http://wiki.openstreetmap.org/wiki/Downloading_data)for an overview.)
-For this project the country extracts found at[geofabrik](https://download.geofabrik.de)make an ideal source for building data.
-These extracts come in multiple formats, for this project we will use the [`.osm.pbf`](http://wiki.openstreetmap.org/wiki/PBF_Format)format data.
+OSM [wiki](http://wiki.openstreetmap.org/wiki/Downloading_data) for an overview.)
+For this project the country extracts found at [geofabrik](https://download.geofabrik.de) make an ideal source for building data.
+These extracts come in multiple formats, for this project we will use the [`.osm.pbf`](http://wiki.openstreetmap.org/wiki/PBF_Format) format data.
 
 You can use the OSM2pgSQL command line tool to create a PostGIS database from the `.osm.pbf` file.
 
 A good guide for installing and using osm2pgsql on windows can be found 
-at[learnosm.org](http://learnosm.org/en/osm-data/osm2pgsql/). 
+at [learnosm.org](http://learnosm.org/en/osm-data/osm2pgsql/). 
 On macOS osm2pgsql can be installed using homebrew: `brew install osm2pgsql`
 
 To run the tool you will need to have a [style file](https://wiki.openstreetmap.org/wiki/Osm2pgsql#Import_style) which 
@@ -129,26 +136,26 @@ This should take half an hour or so for a country sized region (perhaps less if 
 
 _It is assumed that you already have python 3 installed. If you don't, do so at this point in the guide._
 
-The library that handles the reading and writing of raster data is called[GDAL](http://www.gdal.org). We will be 
+The library that handles the reading and writing of raster data is called [GDAL](http://www.gdal.org). We will be 
 interfacing with GDAL using python and as such need the associated bindings installed.
 
 ### 3a) macOS Setup
 There are many options for installing python and GDAL but on OSX I would recommend using 
-the[homebrew](https://brew.sh)package manager. This will install the python bindings as well as GDAL itself.
+the [homebrew](https://brew.sh) package manager. This will install the python bindings as well as GDAL itself.
 
 There is also a graphical setup for GDAL on macOS which can be found at [kyngchaos.com](http://www.kyngchaos.com/software/frameworks).
 (Unsure if this sets up bindings for you)
 
 ### 3a) Windows Setup
 
-You probably want to take a look at[osgeo.org](https://trac.osgeo.org/osgeo4w/wiki)to get GDAL and its python bindings 
+You probably want to take a look at [osgeo.org](https://trac.osgeo.org/osgeo4w/wiki)to get GDAL and its python bindings 
 set up.
 
 ## 4) Generating Rasters
 From Step 2 you have OSM data in a postGIS database. Now it is time to manipulate this and compare it to the population 
 rasters obtained from worldpop.
 
-You will want to download some worldpop raster data from their[get data](http://www.worldpop.org.uk/data/data_sources/)page.
+You will want to download some worldpop raster data from their [get data](http://www.worldpop.org.uk/data/data_sources/) page.
 This project has been using individual country data. On the summary page for each country there is a 
 'Download Individual Datasets' link at the bottom of the page. Please read the dataset details in the right hand side
 to understand what the raster in the file you are downloading is.
@@ -203,8 +210,8 @@ The raster operations and output tiff's generated by default may not be what you
 putting in and what you expect to get out. It should be easy to follow the example in `genDIFFraster.py` to create and 
 output different comparison rasters using numpy array operations.
 
-## 5) Building and Interpreting Maps in QGIS
-A useful (and free) tool for working with the PostGIS database and raster imagery for this project is[QGIS](http://qgis.org).
+## 5) Building Maps in QGIS
+A useful (and free) tool for working with the PostGIS database and raster imagery for this project is [QGIS](http://qgis.org).
 
 Once you have a PostGIS database of an area as well as some rasters you can begin to plot them on maps and create something useful!
 
