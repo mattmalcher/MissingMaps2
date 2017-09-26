@@ -7,7 +7,6 @@ import numpy.ma as ma     # imports the tools for creating masked numpy arrays
 proj = 'GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]]'
 
 
-
 # Import worldpop tiff
 pop_tiff_name = 'Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif'
 [wp_array,tfm,col_p,row_p] = gt_to_array(pop_tiff_name)
@@ -36,7 +35,7 @@ log_pob_tiff_name = 'Output/log_pob.tiff'
 print('\nCreating Log People/Buildings (log_pob) Array')
 
 pob0 = pob_array
-pob0[pob0 < 0.01] = 1.0
+pob0[pob0 < 0.01] = 1.0 # before creating a log array change any values less than 0 to 1 to avoid NaN's
 
 log_pob_array = np.log(pob0)                                        # use numpy array operators instead of loops
 

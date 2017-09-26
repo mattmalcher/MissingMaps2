@@ -10,20 +10,20 @@
         <property key="legend/title-label" value="OSM Buildings"/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Unchecked" id="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
+    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Unchecked" id="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
       <customproperties>
         <property key="legend/title-label" value="WorldPop (2015 Unadjusted)"/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">
+    <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">
       <customproperties>
         <property key="legend/title-label" value="ln(Pop/Buildings)"/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="OSM_Humanitarian_Data_Model20170921193503349" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">
+    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Unchecked" id="OSM_Humanitarian_Data_Model20170921193503349" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2" name="Bing Aerial">
+    <layer-tree-layer expanded="1" providerKey="" checked="Qt::Checked" id="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2/QGIS" name="Bing Aerial">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -31,10 +31,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>9608588.67461379989981651</xmin>
-      <ymin>3037081.78876017825677991</ymin>
-      <xmax>9722050.21470173820853233</xmax>
-      <ymax>3102644.27208938030526042</ymax>
+      <xmin>9519865.13143690302968025</xmin>
+      <ymin>3202428.12745961314067245</ymin>
+      <xmax>9520908.15747745707631111</xmax>
+      <ymax>3202998.52222604816779494</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -76,8 +76,8 @@
         <legendlayerfile isInOverview="0" layerid="planet_osm_polygon20170919155352868" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="NPL_ppp_v2c_2015_UNadj" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="NPL_ppp_v2c_2015_UNadj" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="NPL_ppp_v2c_2015_UNadj20170921183644392" visible="0"/>
       </filegroup>
     </legendlayer>
@@ -86,14 +86,14 @@
         <legendlayerfile isInOverview="0" layerid="log_pob20170921201143330" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OSM Humanitarian Data Model" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OSM Humanitarian Data Model" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OSM_Humanitarian_Data_Model20170921193503349" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="OSM_Humanitarian_Data_Model20170921193503349" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Bing Aerial" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Bing Aerial" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20170920141416716" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20170920141416716" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -142,11 +142,11 @@
         <Extent ymin="3064546.86483822809532285" xmin="9654482.55167946219444275" ymax="3067752.48404133506119251" xmax="9659476.56896430253982544"/>
         <LayerSet>
           <Layer provider="postgres" source="dbname='osm' port=5432 user='mpm2017' sslmode=disable key='tid' srid=3857 type=Polygon table=&quot;public&quot;.&quot;planet_osm_polygon&quot; (way) sql=&quot;building&quot; is not null" name="planet_osm_polygon">planet_osm_polygon20170919155352868</Layer>
-          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">NPL_ppp_v2c_2015_UNadj20170921183644392</Layer>
+          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">NPL_ppp_v2c_2015_UNadj20170921183644392</Layer>
           <Layer provider="gdal" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">OSM_Humanitarian_Data_Model20170921193503349</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="gdal" layerid="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
+          <LayerStyle provider="gdal" layerid="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
             <qgis version="2.18.11" minimumScale="inf" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="-1" classificationMax="17.6635" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
@@ -949,7 +949,7 @@ def my_form_open(dialog, layer, feature):
               <property key="legend/title-label" value="OSM Buildings"/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
+          <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
             <customproperties>
               <property key="legend/title-label" value="WorldPop (2015 Unadjusted)"/>
             </customproperties>
@@ -968,11 +968,11 @@ def my_form_open(dialog, layer, feature):
         <Extent ymin="3049763.05522390268743038" xmin="9601468.56962809525430202" ymax="3106261.02854733308777213" xmax="9681372.84618551842868328"/>
         <LayerSet>
           <Layer provider="postgres" source="dbname='osm' port=5432 user='mpm2017' sslmode=disable key='tid' srid=3857 type=Polygon table=&quot;public&quot;.&quot;planet_osm_polygon&quot; (way) sql=&quot;building&quot; is not null" name="planet_osm_polygon">planet_osm_polygon20170919155352868</Layer>
-          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">NPL_ppp_v2c_2015_UNadj20170921183644392</Layer>
+          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">NPL_ppp_v2c_2015_UNadj20170921183644392</Layer>
           <Layer provider="gdal" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">OSM_Humanitarian_Data_Model20170921193503349</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="gdal" layerid="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/Maps2/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
+          <LayerStyle provider="gdal" layerid="NPL_ppp_v2c_2015_UNadj20170921183644392" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif" name="NPL_ppp_v2c_2015_UNadj">
             <qgis version="2.18.11" minimumScale="inf" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="-1" classificationMax="17.6635" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
@@ -1753,7 +1753,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties/>
     </Composition>
   </Composer>
-  <Composer title="People / Buildings" visible="1">
+  <Composer title="People / Buildings" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -1794,7 +1794,7 @@ def my_form_open(dialog, layer, feature):
         </lineStyle>
         <StartPoint x="228.126" y="54.5696"/>
         <StopPoint x="206.79" y="143.604"/>
-        <ComposerItem pagey="51.8625" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="204.083" y="51.8625" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.7497" outlineWidth="0.3" excludeFromExports="0" uuid="{bbc3063d-a93a-44be-beb8-a0294fe08f36}" height="94.4488" itemRotation="0" frame="false" pagex="204.083">
+        <ComposerItem pagey="51.8625" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="204.083" y="51.8625" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.7502" outlineWidth="0.3" excludeFromExports="0" uuid="{bbc3063d-a93a-44be-beb8-a0294fe08f36}" height="94.4486" itemRotation="0" frame="false" pagex="204.083">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -1849,7 +1849,7 @@ def my_form_open(dialog, layer, feature):
               <property key="legend/title-label" value="OSM Buildings"/>
             </customproperties>
           </layer-tree-layer>
-          <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">
+          <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">
             <customproperties>
               <property key="legend/title-label" value="ln(Pop/Buildings) Per Pixel"/>
             </customproperties>
@@ -1857,7 +1857,7 @@ def my_form_open(dialog, layer, feature):
           <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="OSM_Humanitarian_Data_Model20170921193503349" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">
             <customproperties/>
           </layer-tree-layer>
-          <layer-tree-layer expanded="1" providerKey="" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2" name="Bing Aerial">
+          <layer-tree-layer expanded="1" providerKey="" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2/QGIS" name="Bing Aerial">
             <customproperties/>
           </layer-tree-layer>
         </layer-tree-group>
@@ -1871,12 +1871,12 @@ def my_form_open(dialog, layer, feature):
         <Extent ymin="3065196.42799393739551306" xmin="9655453.95721498690545559" ymax="3067132.216385493054986" xmax="9657950.96585740707814693"/>
         <LayerSet>
           <Layer provider="postgres" source="dbname='osm' port=5432 user='mpm2017' sslmode=disable key='tid' srid=3857 type=Polygon table=&quot;public&quot;.&quot;planet_osm_polygon&quot; (way) sql=&quot;building&quot; is not null" name="planet_osm_polygon">planet_osm_polygon20170919155352868</Layer>
-          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">log_pob20170921201143330</Layer>
-          <Layer provider="" source="/Users/mpm2017/Dropbox/Current Work/Maps2" name="Bing Aerial">OpenLayers_plugin_layer20170920141416716</Layer>
+          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">log_pob20170921201143330</Layer>
+          <Layer provider="" source="/Users/mpm2017/Dropbox/Current Work/Maps2/QGIS" name="Bing Aerial">OpenLayers_plugin_layer20170920141416716</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="" layerid="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2" name="Bing Aerial"/>
-          <LayerStyle provider="gdal" layerid="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">
+          <LayerStyle provider="" layerid="OpenLayers_plugin_layer20170920141416716" source="/Users/mpm2017/Dropbox/Current Work/Maps2/QGIS" name="Bing Aerial"/>
+          <LayerStyle provider="gdal" layerid="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">
             <qgis version="2.18.11" minimumScale="inf" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="10.2419" classificationMinMaxOrigin="User" band="1" classificationMin="5" type="singlebandpseudocolor">
@@ -2645,7 +2645,7 @@ def my_form_open(dialog, layer, feature):
         <Extent ymin="3049763.05522390268743038" xmin="9601468.56962809525430202" ymax="3106261.02854733308777213" xmax="9681372.84618551842868328"/>
         <LayerSet>
           <Layer provider="postgres" source="dbname='osm' port=5432 user='mpm2017' sslmode=disable key='tid' srid=3857 type=Polygon table=&quot;public&quot;.&quot;planet_osm_polygon&quot; (way) sql=&quot;building&quot; is not null" name="planet_osm_polygon">planet_osm_polygon20170919155352868</Layer>
-          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">log_pob20170921201143330</Layer>
+          <Layer provider="gdal" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">log_pob20170921201143330</Layer>
           <Layer provider="gdal" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://a.tile.openstreetmap.fr/hot/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OSM Humanitarian Data Model">OSM_Humanitarian_Data_Model20170921193503349</Layer>
         </LayerSet>
         <LayerStyles>
@@ -2662,7 +2662,7 @@ def my_form_open(dialog, layer, feature):
               <blendMode>0</blendMode>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="gdal" layerid="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/Maps2/log_pob.tiff" name="log_pob">
+          <LayerStyle provider="gdal" layerid="log_pob20170921201143330" source="/Users/mpm2017/Dropbox/Current Work/MissingMaps2/Output/log_pob.tiff" name="log_pob">
             <qgis version="2.18.11" minimumScale="inf" maximumScale="1e+08" hasScaleBasedVisibilityFlag="0">
               <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="10.2419" classificationMinMaxOrigin="User" band="1" classificationMin="5" type="singlebandpseudocolor">
@@ -3439,7 +3439,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>30.44769399655277908</ymax>
       </extent>
       <id>NPL_ppp_v2c_2015_UNadj20170921183644392</id>
-      <datasource>./155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif</datasource>
+      <datasource>../Input/155_NPL_ppp_v2c_2015_UNadj/NPL_ppp_v2c_2015_UNadj.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3566,7 +3566,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>20037508.33999999985098839</ymax>
       </extent>
       <id>OpenLayers_plugin_layer20170920141416716</id>
-      <datasource>.</datasource>
+      <datasource>../../Maps2/QGIS</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3595,7 +3595,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>30.44769399655277908</ymax>
       </extent>
       <id>log_pob20170921201143330</id>
-      <datasource>./log_pob.tiff</datasource>
+      <datasource>../Output/log_pob.tiff</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4106,7 +4106,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>.</annotationform>
+      <annotationform>../../Maps2/QGIS</annotationform>
       <aliases>
         <alias field="osm_id" index="0" name=""/>
         <alias field="access" index="1" name=""/>
@@ -4255,10 +4255,10 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="raster"/>
         </columns>
       </attributetableconfig>
-      <editform>.</editform>
+      <editform>../../Maps2/QGIS</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>.</editforminitfilepath>
+      <editforminitfilepath>../../Maps2/QGIS</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
