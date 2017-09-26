@@ -32,10 +32,10 @@ Outputs:
 ### Why have they been made?
 
 Many of the places where disasters occur are 'missing' from the map.
-[Missing Maps](http://www.missingmaps.org)is a project to give first responders the information they need to assist 
+[Missing Maps](http://www.missingmaps.org) is a project to give first responders the information they need to assist 
  people effectively. 
  
-The originator, Simon has many other responsibilities (check out his [blog](https://medium.com/@Simon_B_Johnson) ). As such, updating the tools used for the original blog post has 
+The originator, Simon has many other responsibilities (check out his [blog](https://medium.com/@Simon_B_Johnson)). As such, updating the tools used for the original blog post has 
 fallen somewhere down his list of priorities, off the bottom, then into this repository.
 
 ### What is Next?
@@ -90,7 +90,7 @@ login using pgadmin as:
  `<your username>` @ `127.0.0.1`. 
 
 If you have trouble logging into your database 
-this [stack overflow link](https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist)may be of use.
+this [stack overflow link](https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist) may be of use.
 
 My advice is to use pgAdmin 3 on macOS because it just works. 
 If you use PgAdmin4 and encounter problems, the following may be of interest:
@@ -148,7 +148,7 @@ There is also a graphical setup for GDAL on macOS which can be found at [kyngcha
 
 ### 3a) Windows Setup
 
-You probably want to take a look at [osgeo.org](https://trac.osgeo.org/osgeo4w/wiki)to get GDAL and its python bindings 
+You probably want to take a look at [osgeo.org](https://trac.osgeo.org/osgeo4w/wiki) to get GDAL and its python bindings 
 set up.
 
 ## 4) Generating Rasters
